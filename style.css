@@ -1,0 +1,292 @@
+:root {
+    
+        --verde-celtics: #007a33;
+        --branco: #FFFFFF;
+        --verde-escuro: #004A33;
+        --dourado: #BA9653;
+        --cinza-fundo: #F5F5F5;
+        --verde-claro: #00a650;
+        --verde-transparente: rgba(0, 122, 51, 0.1);
+    }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.7;
+    background-color: var(--cinza-fundo);
+    color: var(--verde-escuro);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--verde-celtics);
+    background-image: url('/IMAGENS/team.jpeg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-blend-mode: overlay; 
+    color: var(--branco);
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%;
+    border-radius: 15px;
+    position: relative; 
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 102, 42, 0.7); 
+    z-index: 1;
+}
+
+.logo, nav {
+    position: relative;
+    z-index: 2; 
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    max-width: 100px;
+    margin-right: 20px;
+    border-radius: 50%;
+    border: 3px solid var(--dourado);
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: rotate(360deg);
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+nav a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    border-radius: 15px;
+}
+
+nav a:hover {
+    background-color: var(--dourado);
+    color: var(--verde-escuro);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+main {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+section {
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+section:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+h2 {
+    color: var(--verde-celtics);
+    border-bottom: 3px solid var(--verde-celtics);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+h3 {
+    color: var(--verde-escuro);
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.content p {
+    margin-bottom: 15px;
+}
+
+.jogadores-grid, .trofeus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.jogador, .trofeu {
+    text-align: center;
+    background-color: var(--cinza-fundo);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.jogador:hover, .trofeu:hover {
+    transform: scale(1.05);
+}
+
+.jogador img, .trofeu img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 4px solid var(--verde-celtics);
+}
+.jogador .detalhes {
+    background-color: rgba(0, 122, 51, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.jogador .detalhes ul, 
+.trofeu ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.jogador .detalhes ul li, 
+.trofeu ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(0, 122, 51, 0.2);
+}
+
+.jogador .detalhes ul li:last-child, 
+.trofeu ul li:last-child {
+    border-bottom: none;
+}
+
+.arena-imagem-completa {
+    width: 90%;
+    max-width: 1150px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.arena-imagem-completa img {
+    width: 85%;
+    height: 1000%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin-top: auto;
+    border-radius: 8px;
+}
+
+img {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.botao-voltar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.botao-voltar a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #BA9653;
+    color: #FFFFFF;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .jogadores-grid, .trofeus-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.lista-titulos li {
+    background-color: rgba(0, 122, 51, 0.05);
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.lista-titulos li:hover {
+    background-color: rgba(0, 122, 51, 0.1);
+}
